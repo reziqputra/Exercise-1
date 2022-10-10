@@ -57,6 +57,7 @@
                 {
                     if(reziq[RP] > reziq[RP + 1])
                     {
+                        //tukar elemen
                         int temp;
                         temp = reziq[RP];
                         reziq[RP] = reziq[RP + 1];
