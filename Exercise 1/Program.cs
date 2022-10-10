@@ -3,7 +3,7 @@
 
     class Program
     {
-        private int[] a = new int[66];
+        private int[] reziq = new int[66];
 
         private int n;
 
@@ -28,7 +28,7 @@
             {
                 Console.Write("<" + ( i + 1) + ">");
                 string s1 = Console.ReadLine();
-                a[i] = Int32.Parse(s1);
+                reziq[i] = Int32.Parse(s1);
             }
         }
         public void display()
@@ -39,10 +39,34 @@
             Console.WriteLine("----------------------------------");
             for(int RP = 0; RP < n; RP++)
             {
-                Console.WriteLine(a[RP]);
+                Console.WriteLine(reziq[RP]);
             }
             Console.WriteLine("");
         }
-        public void BubbleSortArray
+        public void InsertSortArray()
+        {
+            for (int i = 1; i < n; i++)
+            {
+                for(int RP = 0; RP < n - i; RP++)
+                {
+                    if(reziq[RP] > reziq[RP + 1])
+                    {
+                        int temp;
+                        temp = reziq[RP];
+                        reziq[RP] = reziq[RP + 1];
+                        reziq[RP + 1] = temp;
+                    }
+                }
+            }
+        }
+        static void Main (string[] args)
+        {
+            Program myList = new Program();
+            myList.read();
+            myList.InsertSortArray();
+            myList.display();
+            Console.WriteLine("\n\nTekan Tombol Apa Saja Untuk keluar.");
+            Console.Read();
+        }
     }
 }
